@@ -1,0 +1,1 @@
+This bug arises when using `performSelector:withObject:afterDelay:` in Objective-C with selectors that take objects as parameters.  If the object passed as a parameter is deallocated before the selector is invoked, a crash will occur. This is because the selector will attempt to access the memory location of the deallocated object, resulting in a EXC_BAD_ACCESS error.
